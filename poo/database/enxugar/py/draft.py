@@ -45,6 +45,7 @@ def main ():
     toalha = Toalha("" , "") #objeto manipulado
     while True: #loop infinito 
         line: str = input()
+        print ("$" + line)
         args: list[str]=line.split(" ")
 
 
