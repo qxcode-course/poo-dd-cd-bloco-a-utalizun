@@ -42,7 +42,7 @@ print(doguito)
 """
 
 def main ():
-    toalha = Toalha("" , "") #objeto manipulado
+    toalha = Toalha( "" , "") #objeto manipulado
     while True: #loop infinito 
         line: str = input()
         print ("$" + line)
@@ -56,7 +56,7 @@ def main ():
         elif args[0] == "criar":
             color = args [1]
             size = args [2]
-            toalha = Toalha(color,size)
+            toalha = Toalha( color, size)
 
 
         elif args[0] == "mostrar":
