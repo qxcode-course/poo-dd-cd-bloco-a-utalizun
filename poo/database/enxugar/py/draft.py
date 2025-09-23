@@ -20,15 +20,25 @@ class Toalha:
         return 0
     
     def __str__ (self) -> str:
-        return f"Cor:{self .color}, Tam:{self .size}, Umidade:{self .wetness}"
+        return f"Cor:{self.color}, Tam:{self.size}, Umidade:{self.wetness}"
+
+def isdry (self) -> bool:
+    return self.wetness == 0
+
+def wringOut (self) -> None :
+    self.wetness = 0
+
 
 """
+VALORES INSERIDOS DIRETAMENTE DO PROGRAMADOR:
+
 doguito = Toalha ("velha" , "G")
 print (doguito)
 doguito.dry(10)
 print(doguito) 
 doguito.dry(30)
 print(doguito)
+
 """
 
 def main ():
@@ -36,17 +46,34 @@ def main ():
     while True: #loop infinito 
         line: str = input()
         args: list[str]=line.split(" ")
+
+
         if args[0] == "end":
             break
+
+
         elif args[0] == "criar":
             color = args [1]
             size = args [2]
             toalha = Toalha(color,size)
+
+
         elif args[0] == "mostrar":
             print(toalha)
-        elif args[0] == "seca":
+
+        elif args [0] == "seca":
+            if toalha.isdry():
+                print("sim")
+            else:
+                print("nao")
+
+        elif args[0] == "enxugar":
             amount: int = int(args[1])
             toalha.dry(amount)
+
+        elif args[0] == "torcer":
+            toalha.wringOut()
+
         else: 
             print("falhou: comando não encontrado")
 main()
