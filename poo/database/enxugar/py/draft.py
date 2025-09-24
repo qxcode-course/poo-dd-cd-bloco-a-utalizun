@@ -20,7 +20,7 @@ class Toalha:
         return 0
     
     def __str__ (self) -> str:
-        return f"Cor:{self.color}, Tam:{self.size}, Umidade:{self.wetness}"
+        return f"Cor:{qself.color}, Tam:{self.size}, Umidade:{self.wetness}"
 
 def isdry (self) -> bool:
     return self.wetness == 0

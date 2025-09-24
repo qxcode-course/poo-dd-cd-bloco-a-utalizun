@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2025-09-23_20-02-33",
+            "content": "@@ -1,371 +1,995 @@\n-class Animal:%0A    def __innit__( self, especies: str, sound: str):%0A        self.especies: str = especies%0A        self.sound: str = sound%0A        self.age: int = 0%0A%0A    def __str__(self):%0A        return f%22%7B self.especies%7D:%7B self.age%7D:%7B self.sound%7D%22%0A    %0Adef main():%0A    animal: Animal = Animal(%22%22,%22%22)%0A    while True:%0A        line = imput()%0A        print(%22$%22 + line)%0Amain()\n+@@ -1,8 +1,27 @@%0A+@@ -1,368 +0,0 @@%250A-%0A class An%0A@@ -25,17 +25,19 @@%0A  Animal:%0A-%250A%0A+%25250A%0A     def %0A@@ -80,17 +80,19 @@%0A d: str):%0A-%250A%0A+%25250A%0A         %0A@@ -120,17 +120,19 @@%0A especies%0A-%250A%0A+%25250A%0A         %0A@@ -154,17 +154,19 @@%0A  = sound%0A-%250A%0A+%25250A%0A         %0A@@ -186,10 +186,14 @@%0A  = 0%0A-%250A%250A%0A+%25250A%25250A%0A     %0A@@ -210,17 +210,19 @@%0A _(self):%0A-%250A%0A+%25250A%0A         %0A@@ -233,10 +233,14 @@%0A rn f%0A-%2522%257B%0A+%252522%25257B%0A self%0A@@ -252,19 +252,23 @@%0A cies%0A-%257D:%257B%0A+%25257D:%25257B%0A self.age%0A %257D:%257Bs%0A@@ -267,11 +267,15 @@%0A .age%0A-%257D:%257B%0A+%25257D:%25257B%0A self%0A@@ -284,16 +284,24 @@%0A ound%0A-%257D%2522%250A%0A+%25257D%252522%25250A%0A     %0A-%250A%0A+%25250A%0A def %0A@@ -307,17 +307,19 @@%0A  main():%0A-%250A%0A+%25250A%0A     anim%0A@@ -342,15 +342,25 @@%0A mal(%0A-%2522%2522,%2522%2522)%250A%0A+%252522%252522,%252522%252522)%25250A%0A     %0A@@ -370,17 +370,19 @@%0A le True:%0A-%250A%0A+%25250A%0A         %0A@@ -395,17 +395,19 @@%0A  imput()%0A-%250A%0A+%25250A%0A         %0A@@ -416,19 +416,23 @@%0A int(%0A-%2522$%2522%0A+%252522$%252522%0A  + line)%0A %250Amai%0A@@ -431,11 +431,14 @@%0A ine)%0A-%250A%0A+%25250A%0A main()%0A+%250A%0A\n",
+            "lines": "89"
+        },
+        {
+            "label": "2025-09-23_20-17-35",
+            "content": "class Animal:\n    def __innit__( self, especies: str, sound: str):\n        self.especies: str = especies\n        self.sound: str = sound\n        self.age: int = 0\n\n    def __str__(self):\n        return f\"{ self.especies}:{ self.age}:{ self.sound}\"\n    \ndef main():\n    animal: Animal = Animal(\"\",\"\")\n    while True:\n        line = imput()\n        print(\"$\" + line)\nmain()",
+            "lines": "15"
+        }
+    ]
+}
