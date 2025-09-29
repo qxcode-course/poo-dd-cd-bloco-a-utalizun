@@ -32,8 +32,123 @@
         },
         {
             "label": "2025-09-23_19-59-48",
-            "content": "class Toalha:\n    def __init__ (self, color: str, size: str): #construtor\n        self.color: str= color #atributos\n        self.size: str = size \n        self.wetness: int = 0\n\n    def dry(self, amount: int) -> None:\n        self .wetness += amount\n        if self.wetness >= self.getMaxWetness():\n            print(\"toalha encharcada\")\n            self. wetness = self .getMaxWetness()\n\n    def getMaxWetness (self) -> int:\n        if self .size == \"P\":\n            return 10 \n        if self .size == \"M\":\n            return 20\n        if self .size == \"G\":\n            return 30\n        return 0\n    \n    def __str__ (self) -> str:\n        return f\"Cor:{self.color}, Tam:{self.size}, Umidade:{self.wetness}\"\n\ndef isdry (self) -> bool:\n    return self.wetness == 0\n\ndef wringOut (self) -> None :\n    self.wetness = 0\n\n\n\"\"\"\nVALORES INSERIDOS DIRETAMENTE DO PROGRAMADOR:\n\ndoguito = Toalha (\"velha\" , \"G\")\nprint (doguito)\ndoguito.dry(10)\nprint(doguito) \ndoguito.dry(30)\nprint(doguito)\n\n\"\"\"\n\ndef main ():\n    toalha = Toalha( \"\" , \"\") #objeto manipulado\n    while True: #loop infinito \n        line: str = input()\n        print (\"$\" + line)\n        args: list[str]=line.split(\" \")\n\n\n        if args[0] == \"end\":\n            break\n\n\n        elif args[0] == \"criar\":\n            color = args [1]\n            size = args [2]\n            toalha = Toalha( color, size)\n\n\n        elif args[0] == \"mostrar\":\n            print(toalha)\n\n        elif args [0] == \"seca\":\n            if toalha.isdry():\n                print(\"sim\")\n            else:\n                print(\"nao\")\n\n        elif args[0] == \"enxugar\":\n            amount: int = int(args[1])\n            toalha.dry(amount)\n\n        elif args[0] == \"torcer\":\n            toalha.wringOut()\n\n        else: \n            print(\"falhou: comando n\u00e3o encontrado\")\nmain()",
+            "content": "@@ -655,9 +655,8 @@\n or:%7B\n-q\n self\n",
             "lines": "80"
+        },
+        {
+            "label": "2025-09-29_14-25-59",
+            "content": "@@ -31,17 +31,19 @@\n  (self, \n-C\n+col\n or: str,\n@@ -43,23 +43,20 @@\n r: str, \n-Tamanho\n+size\n : str): \n@@ -80,17 +80,17 @@\n    self.\n-C\n+c\n olor: st\n@@ -94,13 +94,14 @@\n  str\n- \n = co\n+lo\n r #a\n@@ -126,23 +126,20 @@\n elf.\n-Tamanho\n+size\n : str = \n Tama\n@@ -134,23 +134,21 @@\n : str = \n-Tamanho\n+size \n %0A       \n@@ -153,23 +153,23 @@\n    self.\n-Umidade\n+wetness\n : int = \n@@ -223,24 +223,25 @@\n     self\n-.Umidade\n+ .wetness\n  += amou\n@@ -259,23 +259,23 @@\n if self.\n-Umidade\n+wetness\n  %3E= self\n@@ -352,22 +352,24 @@\n elf.\n-Umidade\n+ wetness\n  = self\n+ \n .get\n@@ -430,32 +430,30 @@\n      if self\n-.Tamanho\n+ .size\n  == %22P%22:%0A   \n@@ -483,32 +483,30 @@\n      if self\n-.Tamanho\n+ .size\n  == %22M%22:%0A   \n@@ -539,24 +539,22 @@\n  if self\n-.Tamanho\n+ .size\n  == %22G%22:\n@@ -650,32 +650,32 @@\n n f%22\n- \n Cor:%7B\n- \n+q\n self.co\n+lo\n r\n- \n %7D, Tam:%7B\n  sel\n@@ -674,22 +674,17 @@\n am:%7B\n- \n self.\n-Tamanho \n+size\n %7D, U\n@@ -691,30 +691,28 @@\n midade:%7B\n- \n self.\n-Umidade \n+wetness\n %7D%22%0A%0Adef \n@@ -749,23 +749,23 @@\n rn self.\n-Umidade\n+wetness\n  == 0%0A%0Ad\n@@ -802,23 +802,23 @@\n    self.\n-Umidade\n+wetness\n  = 0%0A%0A%0A%22\n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-09-29_14-32-17",
+            "content": "@@ -1287,16 +1287,18 @@\n       co\n+lo\n r = args\n@@ -1318,15 +1318,12 @@\n     \n-tamanho\n+size\n  = a\n@@ -1363,21 +1363,19 @@\n ha( \n-C\n+col\n or, \n-Tamanho \n+size\n )%0A%0A%0A\n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-09-29_14-33-51",
+            "content": "@@ -1043,16 +1043,34 @@\n %22 , %22%22) \n+#objeto manipulado\n %0A    whi\n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-09-29_14-34-40",
+            "content": "@@ -11,85 +11,8 @@\n ha:%0A\n-    # 1. Construtor: usa 'snake_case' (cor, tamanho) e atribui corretamente.%0A\n     \n@@ -31,17 +31,17 @@\n  (self, \n-c\n+C\n or: str,\n@@ -41,17 +41,17 @@\n r: str, \n-t\n+T\n amanho: \n@@ -55,16 +55,28 @@\n o: str):\n+ #construtor\n %0A       \n@@ -81,17 +81,19 @@\n    self.\n-c\n+Col\n or: str \n@@ -102,38 +102,18 @@\n cor \n-        # Atributo padronizado\n+#atributos\n %0A   \n@@ -118,25 +118,25 @@\n        self.\n-t\n+T\n amanho: str \n@@ -141,38 +141,15 @@\n r = \n-t\n+T\n amanho\n- # Atributo padronizado\n %0A   \n@@ -154,25 +154,25 @@\n        self.\n-u\n+U\n midade: int \n@@ -178,135 +178,21 @@\n  = 0\n-       # Atributo padronizado%0A%0A    # 2. Renomeado para 'absorb' (absorver) para clareza, pois aumenta a umidade.%0A    def absorb\n+%0A%0A    def dry\n (sel\n@@ -225,25 +225,25 @@\n        self.\n-u\n+U\n midade += am\n@@ -259,20 +259,25 @@\n     \n-max_u\n+if self.U\n midade \n+%3E\n = se\n@@ -286,22 +286,20 @@\n .get\n-_max_w\n+MaxW\n etness()\n  # U\n@@ -298,87 +298,8 @@\n ss()\n- # Usando o novo nome do m%C3%A9todo%0A        %0A        if self.umidade %3E= max_umidade\n :%0A  \n@@ -344,33 +344,33 @@\n            self.\n-u\n+U\n midade = max_umi\n@@ -366,75 +366,29 @@\n e = \n-max_umidade%0A%0A    # 3. M%C3%A9todo de regra de neg%C3%B3cio, usa 'snake_case'.\n+self.getMaxWetness()%0A\n %0A   \n@@ -399,14 +399,12 @@\n  get\n-_max_w\n+MaxW\n etne\n@@ -429,33 +429,33 @@\n         if self.\n-t\n+T\n amanho == %22P%22:%0A \n@@ -484,33 +484,33 @@\n         if self.\n-t\n+T\n amanho == %22M%22:%0A \n@@ -542,25 +542,25 @@\n     if self.\n-t\n+T\n amanho == %22G\n@@ -614,87 +614,19 @@\n     \n-# 4. M%C3%A9todo para verificar se est%C3%A1 seca, agora dentro da classe.%0A    def is_dry\n+def __str__\n  (se\n@@ -636,12 +636,11 @@\n  -%3E \n-bool\n+str\n :%0A  \n@@ -656,97 +656,87 @@\n urn \n-self.umidade == 0%0A%0A    # 5. M%C3%A9todo para torcer, agora dentro da classe.%0A    def wring_out\n+f%22 Cor:%7B self.cor %7D, Tam:%7B self.Tamanho %7D, Umidade:%7B self.Umidade %7D%22%0A%0Adef isdry\n  (se\n@@ -746,37 +746,39 @@\n  -%3E \n-None \n+bool\n :%0A    \n-   \n+return\n  self.\n-u\n+U\n midade =\n  0%0A%0A\n@@ -777,301 +777,116 @@\n de =\n+=\n  0%0A%0A\n-    # 6. Representa%C3%A7%C3%A3o em string: utiliza os atributos padronizados.%0A    def __str__ (self) -%3E str:%0A        return f%22Cor:%7B self.cor %7D, Tam:%7B self.tamanho %7D, Umidade:%7B self.umidade %7D%22%0A%0A%0A%22%22%22%0AVALORES INSERIDOS DIRETAMENTE DO PROGRAMADOR:%0A(O m%C3%A9todo 'dry' original foi trocado por 'absorb')%0A%22%22%22\n+def wringOut (self) -%3E None :%0A    self.Umidade = 0%0A%0A%0A%22%22%22%0AVALORES INSERIDOS DIRETAMENTE DO PROGRAMADOR:%0A\n %0Adog\n@@ -942,29 +942,8 @@\n uito\n-.absorb(10) # Antigo \n .dry\n@@ -974,29 +974,8 @@\n uito\n-.absorb(30) # Antigo \n .dry\n@@ -995,16 +995,20 @@\n guito)%0A%0A\n+%22%22%22%0A\n %0Adef mai\n@@ -1017,96 +1017,8 @@\n ():%0A\n-    # toalha inicial %C3%A9 criada com valores vazios, ser%C3%A1 substitu%C3%ADda pelo comando 'criar'%0A\n     \n@@ -1044,21 +1044,16 @@\n  , %22%22) %0A\n-    %0A\n     whil\n@@ -1080,25 +1080,8 @@\n to %0A\n-        try:%0A    \n     \n@@ -1108,107 +1108,8 @@\n t()%0A\n-        except EOFError:%0A            break # Encerra se n%C3%A3o houver mais entrada (%C3%BAtil em scripts)%0A%0A\n     \n@@ -1154,19 +1154,17 @@\n ist%5Bstr%5D\n- = \n+=\n line.spl\n@@ -1259,86 +1259,8 @@\n r%22:%0A\n-            # 7. Corre%C3%A7%C3%A3o: usa as vari%C3%A1veis de escopo local 'cor' e 'tamanho'%0A\n     \n@@ -1346,14 +1346,14 @@\n ha( \n-c\n+C\n or, \n-t\n+T\n aman\n@@ -1458,52 +1458,8 @@\n a%22:%0A\n-            # Usa o m%C3%A9todo is_dry corrigido%0A\n     \n@@ -1478,17 +1478,16 @@\n oalha.is\n-_\n dry():%0A \n@@ -1601,52 +1601,8 @@\n r%22:%0A\n-            # Usa o m%C3%A9todo absorb corrigido%0A\n     \n@@ -1659,14 +1659,11 @@\n lha.\n-absorb\n+dry\n (amo\n@@ -1706,55 +1706,8 @@\n r%22:%0A\n-            # Usa o m%C3%A9todo wring_out corrigido%0A\n     \n@@ -1730,10 +1730,9 @@\n ring\n-_o\n+O\n ut()\n@@ -1804,113 +1804,8 @@\n o%22)%0A\n-            %0A# %C3%89 boa pr%C3%A1tica usar este padr%C3%A3o para executar a fun%C3%A7%C3%A3o main%0Aif __name__ == %22__main__%22:%0A    \n main\n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-09-29_14-41-51",
+            "content": "@@ -7,16 +7,93 @@\n Toalha:%0A\n+    # 1. Construtor: usa 'snake_case' (cor, tamanho) e atribui corretamente.%0A\n     def \n@@ -118,17 +118,17 @@\n r: str, \n-T\n+t\n amanho: \n@@ -136,20 +136,8 @@\n tr):\n- #construtor\n %0A   \n@@ -165,18 +165,38 @@\n cor \n-#atributos\n+        # Atributo padronizado\n %0A   \n@@ -201,25 +201,25 @@\n        self.\n-T\n+t\n amanho: str \n@@ -220,23 +220,46 @@\n : str = \n-T\n+t\n amanho\n+ # Atributo padronizado\n %0A       \n@@ -260,25 +260,25 @@\n        self.\n-U\n+u\n midade: int \n@@ -284,21 +284,135 @@\n  = 0\n-%0A%0A    def dry\n+       # Atributo padronizado%0A%0A    # 2. Renomeado para 'absorb' (absorver) para clareza, pois aumenta a umidade.%0A    def absorb\n (sel\n@@ -445,25 +445,25 @@\n        self.\n-U\n+u\n midade += am\n@@ -479,25 +479,20 @@\n     \n-if self.U\n+max_u\n midade \n-%3E\n = se\n@@ -497,28 +497,30 @@\n self.get\n-MaxW\n+_max_w\n etness()\n :%0A      \n@@ -511,16 +511,95 @@\n etness()\n+ # Usando o novo nome do m%C3%A9todo%0A        %0A        if self.umidade %3E= max_umidade\n :%0A      \n@@ -640,33 +640,33 @@\n            self.\n-U\n+u\n midade = self.ge\n@@ -662,29 +662,75 @@\n e = \n-self.getMaxWetness()%0A\n+max_umidade%0A%0A    # 3. M%C3%A9todo de regra de neg%C3%B3cio, usa 'snake_case'.\n %0A   \n@@ -741,12 +741,14 @@\n  get\n-MaxW\n+_max_w\n etne\n@@ -773,33 +773,33 @@\n         if self.\n-T\n+t\n amanho == %22P%22:%0A \n@@ -828,33 +828,33 @@\n         if self.\n-T\n+t\n amanho == %22M%22:%0A \n@@ -886,25 +886,25 @@\n     if self.\n-T\n+t\n amanho == %22G\n@@ -958,19 +958,87 @@\n     \n-def __str__\n+# 4. M%C3%A9todo para verificar se est%C3%A1 seca, agora dentro da classe.%0A    def is_dry\n  (se\n@@ -1044,19 +1044,20 @@\n elf) -%3E \n-str\n+bool\n :%0A      \n@@ -1069,87 +1069,97 @@\n urn \n-f%22 Cor:%7B self.cor %7D, Tam:%7B self.Tamanho %7D, Umidade:%7B self.Umidade %7D%22%0A%0Adef isdry\n+self.umidade == 0%0A%0A    # 5. M%C3%A9todo para torcer, agora dentro da classe.%0A    def wring_out\n  (se\n@@ -1169,39 +1169,37 @@\n  -%3E \n-bool\n+None \n :%0A    \n-return\n+   \n  self.\n-U\n+u\n midade =\n = 0%0A\n@@ -1198,116 +1198,301 @@\n de =\n-=\n  0%0A%0A\n-def wringOut (self) -%3E None :%0A    self.Umidade = 0%0A%0A%0A%22%22%22%0AVALORES INSERIDOS DIRETAMENTE DO PROGRAMADOR:%0A\n+    # 6. Representa%C3%A7%C3%A3o em string: utiliza os atributos padronizados.%0A    def __str__ (self) -%3E str:%0A        return f%22Cor:%7B self.cor %7D, Tam:%7B self.tamanho %7D, Umidade:%7B self.umidade %7D%22%0A%0A%0A%22%22%22%0AVALORES INSERIDOS DIRETAMENTE DO PROGRAMADOR:%0A(O m%C3%A9todo 'dry' original foi trocado por 'absorb')%0A%22%22%22\n %0Adog\n@@ -1540,24 +1540,45 @@\n ito)%0Adoguito\n+.absorb(10) # Antigo \n .dry(10)%0Apri\n@@ -1597,16 +1597,37 @@\n %0Adoguito\n+.absorb(30) # Antigo \n .dry(30)\n@@ -1643,20 +1643,16 @@\n guito)%0A%0A\n-%22%22%22%0A\n %0Adef mai\n@@ -1653,24 +1653,112 @@\n ef main ():%0A\n+    # toalha inicial %C3%A9 criada com valores vazios, ser%C3%A1 substitu%C3%ADda pelo comando 'criar'%0A\n     toalha =\n@@ -1776,16 +1776,21 @@\n  , %22%22) %0A\n+    %0A\n     whil\n@@ -1813,16 +1813,33 @@\n finito %0A\n+        try:%0A    \n         \n@@ -1858,16 +1858,115 @@\n input()%0A\n+        except EOFError:%0A            break # Encerra se n%C3%A3o houver mais entrada (%C3%BAtil em scripts)%0A%0A\n         \n@@ -2007,17 +2007,19 @@\n ist%5Bstr%5D\n-=\n+ = \n line.spl\n@@ -2106,24 +2106,102 @@\n == %22criar%22:%0A\n+            # 7. Corre%C3%A7%C3%A3o: usa as vari%C3%A1veis de escopo local 'cor' e 'tamanho'%0A\n             \n@@ -2279,14 +2279,14 @@\n ha( \n-C\n+c\n or, \n-T\n+t\n aman\n@@ -2387,16 +2387,60 @@\n %22seca%22:%0A\n+            # Usa o m%C3%A9todo is_dry corrigido%0A\n         \n@@ -2455,16 +2455,17 @@\n oalha.is\n+_\n dry():%0A \n@@ -2571,24 +2571,68 @@\n  %22enxugar%22:%0A\n+            # Usa o m%C3%A9todo absorb corrigido%0A\n             \n@@ -2677,19 +2677,22 @@\n  toalha.\n-dry\n+absorb\n (amount)\n@@ -2723,24 +2723,71 @@\n = %22torcer%22:%0A\n+            # Usa o m%C3%A9todo wring_out corrigido%0A\n             \n@@ -2798,17 +2798,18 @@\n ha.wring\n-O\n+_o\n ut()%0A%0A  \n@@ -2873,16 +2873,90 @@\n trado%22)%0A\n+            %0A# %C3%89 boa pr%C3%A1tica usar este padr%C3%A3o para executar a fun%C3%A7%C3%A3o main%0A\n if __nam\n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-09-29_14-42-55",
+            "content": "@@ -41,17 +41,17 @@\n r: str, \n-t\n+T\n amanho: \n@@ -116,25 +116,25 @@\n        self.\n-t\n+T\n amanho: str \n@@ -135,17 +135,17 @@\n : str = \n-t\n+T\n amanho%0A \n@@ -152,25 +152,25 @@\n        self.\n-u\n+U\n midade: int \n@@ -223,25 +223,25 @@\n        self.\n-u\n+U\n midade += am\n@@ -257,25 +257,25 @@\n     if self.\n-u\n+U\n midade %3E= se\n@@ -342,33 +342,33 @@\n            self.\n-u\n+U\n midade = self.ge\n@@ -427,33 +427,33 @@\n         if self.\n-t\n+T\n amanho == %22P%22:%0A \n@@ -482,33 +482,33 @@\n         if self.\n-t\n+T\n amanho == %22M%22:%0A \n@@ -540,25 +540,25 @@\n     if self.\n-t\n+T\n amanho == %22G\n@@ -682,17 +682,17 @@\n :%7B self.\n-t\n+T\n amanho %7D\n@@ -704,25 +704,25 @@\n dade:%7B self.\n-u\n+U\n midade %7D%22%0A%0Ad\n@@ -758,25 +758,25 @@\n return self.\n-u\n+U\n midade == 0%0A\n@@ -815,17 +815,17 @@\n    self.\n-u\n+U\n midade =\n@@ -1344,14 +1344,14 @@\n ha( \n-c\n+C\n or, \n-t\n+T\n aman\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-09-29_14-47-06",
+            "content": "@@ -652,16 +652,17 @@\n eturn f%22\n+ \n Cor:%7B se\n@@ -674,15 +674,12 @@\n r %7D,\n+ \n Tam\n-anho\n :%7B s\n@@ -692,16 +692,17 @@\n manho %7D,\n+ \n Umidade:\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-09-29_14-48-14",
+            "content": "@@ -656,17 +656,16 @@\n n f%22Cor:\n- \n %7B self.c\n@@ -677,17 +677,16 @@\n Tamanho:\n- \n %7B self.t\n@@ -702,17 +702,16 @@\n Umidade:\n- \n %7B self.u\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-09-29_14-48-46",
+            "content": "@@ -696,17 +696,16 @@\n manho %7D,\n- \n Umidade:\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-09-29_14-49-15",
+            "content": "@@ -670,17 +670,16 @@\n f.cor %7D,\n- \n Tamanho:\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-09-29_14-49-50",
+            "content": "@@ -1800,23 +1800,49 @@\n ncontrado%22)%0A\n+if __name__ == %22__main__%22:\n %0A    main()\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-09-29_14-51-14",
+            "content": "@@ -1805,14 +1805,18 @@\n rado%22)%0A%0A\n+    \n main()\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-09-29_14-51-25",
+            "content": "@@ -1805,18 +1805,14 @@\n rado%22)%0A%0A\n-    \n main()\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-09-29_14-56-17",
+            "content": "@@ -726,20 +726,16 @@\n ade %7D%22%0A%0A\n-    \n def isdr\n@@ -778,28 +778,24 @@\n idade == 0%0A%0A\n-    \n def wringOut\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-09-29_14-59-32",
+            "content": "@@ -842,16 +842,186 @@\n de = 0%0A%0A\n+%0A%22%22%22%0AVALORES INSERIDOS DIRETAMENTE DO PROGRAMADOR:%0A%0Adoguito = Toalha (%22velha%22 , %22G%22)%0Aprint (doguito)%0Adoguito.dry(10)%0Aprint(doguito) %0Adoguito.dry(30)%0Aprint(doguito)%0A%0A%22%22%22%0A%0A\n def main\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-09-29_15-00-14",
+            "content": "@@ -756,25 +756,24 @@\n %3E bool:%0A    \n- \n return self.\n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-09-29_15-00-46",
+            "content": "@@ -821,20 +821,16 @@\n  None :%0A\n-    \n     self\n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-09-29_15-00-54",
+            "content": "@@ -855,16 +855,17 @@\n def main\n+ \n ():%0A    \n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-09-29_15-01-24",
+            "content": "@@ -847,17 +847,16 @@\n de = 0%0A%0A\n-%0A\n def main\n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-09-29_15-02-02",
+            "content": "@@ -891,16 +891,20 @@\n  , %22%22) %0A\n+    \n while Tr\n",
+            "lines": "69"
+        },
+        {
+            "label": "2025-09-29_15-03-32",
+            "content": "@@ -891,20 +891,16 @@\n  , %22%22) %0A\n-    \n while Tr\n",
+            "lines": "69"
+        },
+        {
+            "label": "2025-09-29_15-06-49",
+            "content": "@@ -1651,34 +1651,8 @@\n o%22)%0A\n-if __name__ == %22__main__%22:\n %0A   \n",
+            "lines": "69"
+        },
+        {
+            "label": "2025-09-29_15-06-56",
+            "content": "class Toalha:\n    def __init__ (self, cor: str, tamanho: str): #construtor\n        self.cor: str = cor #atributos\n        self.tamanho: str = tamanho\n        self.umidade: int = 0\n\n    def dry(self, amount: int) -> None:\n        self.umidade += amount\n        if self.umidade >= self.getMaxWetness():\n            print(\"toalha encharcada\")\n            self.umidade = self.getMaxWetness()\n\n    def getMaxWetness (self) -> int:\n        if self.tamanho == \"P\":\n            return 10 \n        if self.tamanho == \"M\":\n            return 20\n        if self.tamanho == \"G\":\n            return 30\n        return 0\n    \n    def __str__ (self) -> str:\n        return f\"Cor: { self.cor }, Tamanho: { self.tamanho }, Umidade: { self.umidade }\"\n\n    def isdry (self) -> bool:\n     return self.umidade == 0\n\n    def wringOut (self) -> None :\n        self.umidade = 0\n\n\ndef main():\n    toalha = Toalha( \"\" , \"\") \n    while True: #loop infinito \n        line: str = input()\n        print (\"$\" + line)\n        args: list[str]=line.split(\" \")\n\n\n        if args[0] == \"end\":\n            break\n\n\n        elif args[0] == \"criar\":\n            cor = args [1]\n            tamanho = args [2]\n            toalha = Toalha( cor, tamanho )\n\n\n        elif args[0] == \"mostrar\":\n            print(toalha)\n\n        elif args [0] == \"seca\":\n            if toalha.isdry():\n                print(\"sim\")\n            else:\n                print(\"nao\")\n\n        elif args[0] == \"enxugar\":\n            amount: int = int(args[1])\n            toalha.dry(amount)\n\n        elif args[0] == \"torcer\":\n            toalha.wringOut()\n\n        else: \n            print(\"falhou: comando n\u00e3o encontrado\")\nif __name__ == \"__main__\":\n    main()",
+            "lines": "69"
         }
     ]
 }
