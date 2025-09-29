@@ -66,4 +66,5 @@ def main():
         else: 
             print("falhou: comando não encontrado")
 if __name__ == "__main__":
+
     main()
