@@ -1,48 +1,36 @@
 class Toalha:
-    def __init__ (self, color: str, size: str): #construtor
-        self.color: str= color #atributos
-        self.size: str = size 
-        self.wetness: int = 0
+    def __init__ (self, cor: str, tamanho: str): #construtor
+        self.cor: str = cor #atributos
+        self.tamanho: str = tamanho
+        self.umidade: int = 0
 
     def dry(self, amount: int) -> None:
-        self .wetness += amount
-        if self.wetness >= self.getMaxWetness():
+        self.umidade += amount
+        if self.umidade >= self.getMaxWetness():
             print("toalha encharcada")
-            self. wetness = self .getMaxWetness()
+            self.umidade = self.getMaxWetness()
 
     def getMaxWetness (self) -> int:
-        if self .size == "P":
+        if self.tamanho == "P":
             return 10 
-        if self .size == "M":
+        if self.tamanho == "M":
             return 20
-        if self .size == "G":
+        if self.tamanho == "G":
             return 30
         return 0
     
     def __str__ (self) -> str:
-        return f"Cor:{qself.color}, Tam:{self.size}, Umidade:{self.wetness}"
+        return f"Cor: { self.cor }, Tamanho: { self.tamanho }, Umidade: { self.umidade }"
 
-def isdry (self) -> bool:
-    return self.wetness == 0
+    def isdry (self) -> bool:
+     return self.umidade == 0
 
-def wringOut (self) -> None :
-    self.wetness = 0
+    def wringOut (self) -> None :
+        self.umidade = 0
 
 
-"""
-VALORES INSERIDOS DIRETAMENTE DO PROGRAMADOR:
-
-doguito = Toalha ("velha" , "G")
-print (doguito)
-doguito.dry(10)
-print(doguito) 
-doguito.dry(30)
-print(doguito)
-
-"""
-
-def main ():
-    toalha = Toalha( "" , "") #objeto manipulado
+def main():
+    toalha = Toalha( "" , "") 
     while True: #loop infinito 
         line: str = input()
         print ("$" + line)
@@ -54,9 +42,9 @@ def main ():
 
 
         elif args[0] == "criar":
-            color = args [1]
-            size = args [2]
-            toalha = Toalha( color, size)
+            cor = args [1]
+            tamanho = args [2]
+            toalha = Toalha( cor, tamanho )
 
 
         elif args[0] == "mostrar":
@@ -77,4 +65,5 @@ def main ():
 
         else: 
             print("falhou: comando não encontrado")
-main()
+if __name__ == "__main__":
+    main()
